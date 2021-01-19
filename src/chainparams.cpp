@@ -139,7 +139,7 @@ public:
 
         checkpointData = {
             {
-                0x0
+                {0,0x0}
             }
         };
 
@@ -231,7 +231,7 @@ public:
 
         checkpointData = {
             {
-                0x0
+              {0,0x0}
             }
         };
 
@@ -308,7 +308,7 @@ public:
 
         checkpointData = {
             {
-                0x0
+              {0,0x0}
             }
         };
 
