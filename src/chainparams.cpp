@@ -114,7 +114,7 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
         uint256 hash = genesis.GetHash();
         printf("BLOCK 1 %s\n", consensus.hashGenesisBlock.ToString().c_str());
-        printf("merkle 1 %s\n", consensus.hashMerkleRoot.ToString().c_str());
+        printf("merkle 1 %s\n", genesis.hashMerkleRoot.ToString().c_str());
         printf("NEW 2 %s\n", hash.ToString().c_str());
         assert(consensus.hashGenesisBlock == uint256S("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"));
         assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
