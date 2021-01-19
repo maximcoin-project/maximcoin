@@ -139,7 +139,7 @@ public:
 
         checkpointData = {
             {
-              {0,uint256S("0x0")}
+              {0,uint256S("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2")}
             }
         };
 
@@ -231,7 +231,7 @@ public:
 
         checkpointData = {
             {
-              {0,uint256S("0x0")}
+              {0,uint256S("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2")}
             }
         };
 
@@ -308,7 +308,7 @@ public:
 
         checkpointData = {
             {
-              {0,uint256S("0x0")}
+              {0,uint256S("0x12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2")}
             }
         };
 
