@@ -112,7 +112,11 @@ public:
 
         genesis = CreateGenesisBlock(1317972665, 2084524493, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        uint256 hash = genesis.GetHash();
+        ////////////armen Merikyan ///////////////
+        /**
+        Adding some code to generate the genesis block and time it automatically with generatetoaddress
+        **/
+        //uint256 hash = genesis.GetHash();
         //printf("BLOCK 1 %s\n", consensus.hashGenesisBlock.ToString().c_str());
         //printf("merkle 1 %s\n", genesis.hashMerkleRoot.ToString().c_str());
         //printf("NEW 2 %s\n", hash.ToString().c_str());
@@ -125,6 +129,8 @@ public:
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("dnsseed.maximcoin.org");
+        vSeeds.emplace_back("52.15.202.170");
+        vSeeds.emplace_back("80.240.24.8");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,50);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,51);
