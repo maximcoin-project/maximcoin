@@ -8,7 +8,6 @@ sudo apt-get install -y libminiupnpc-dev libzmq3-dev libprotobuf-dev protobuf-co
 sudo apt-get install -y libboost-all-dev libdb++-dev libminiupnpc-dev
 sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 sudo apt-get install -y libqrencode-dev
-git clone https://github.com/maximcoin-project/maximcoin.git
 cd maximcoin
 ./contrib/install_db4.sh `pwd`
 export BDB_PREFIX='/root/maximcoin/db4'
