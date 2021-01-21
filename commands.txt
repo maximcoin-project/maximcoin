@@ -6,16 +6,16 @@ sudo apt-get install libboost-all-dev libdb++-dev libminiupnpc-dev
 sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 sudo apt-get install libqrencode-dev
 git clone https://github.com/maximcoin-project/maximcoin.git
-
+cd maximcoin
 ./contrib/install_db4.sh `pwd`
 
 ////////////////////////OUTPUT
 export BDB_PREFIX='/home/ubuntu/maximcoin/db4'
-./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
+BDB_PREFIX='/root/maximcoin/db4'
 
-cd maximcoin
 chmod 777 autogen.sh
 ./autogen.sh
+./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
 
 make
 cd
@@ -47,4 +47,8 @@ txindex=1
 */2 * * * * cd /root/explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
 */5 * * * * cd /root/explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
 
--txindex -daemon 
+-txindex -daemon
+
+git add .
+git commit -m""
+git push git@github.com:maximcoin-project/maximcoin.git
