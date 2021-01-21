@@ -2,15 +2,49 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev libboost-all-dev libboost-program-options-dev
 sudo apt-get install -y libminiupnpc-dev libzmq3-dev libprotobuf-dev protobuf-compiler unzip software-properties-common
-sudo add-apt-repository ppa:bitcoin/bitcoin
-sudo apt-get update
-sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
-
 sudo apt-get install libboost-all-dev libdb++-dev libminiupnpc-dev
-
+sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+sudo apt-get install libqrencode-dev
 git clone https://github.com/maximcoin-project/maximcoin.git
+
+./contrib/install_db4.sh `pwd`
+
+////////////////////////OUTPUT
+export BDB_PREFIX='/home/ubuntu/maximcoin/db4'
+./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
+
 cd maximcoin
 chmod 777 autogen.sh
 ./autogen.sh
-./configure
+
 make
+cd
+mkdir .maximcoin
+vi .maximcoin/maximcoin.conf
+
+rpcuser=""
+rpcpassword=""
+rpcport=21121
+port=21122
+daemon=1
+server=1
+rpcallowip=127.0.0.1
+txindex=1
+
+"genesis_tx": "97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9",
+"genesis_block": "12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2",
+
+"blockindex": 5,
+"blockhash": "22142c27ec861516a14cf065a2fbb1e6a431dea2fa6ff301488e9436408d47b2",
+"txhash": "181109efd4dec2766653c324bd6a7debd6cb33e7ce880b7302dafff6b5284c2a",
+"address": "mxc1qua5j87ej970z8vs77d2n2aw4utg3uqrh5fxk82"
+
+*/1 * * * * cd /home/ubuntu/explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
+*/2 * * * * cd /home/ubuntu/explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
+*/5 * * * * cd /home/ubuntu/explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+
+*/1 * * * * cd /root/explorer && /usr/bin/nodejs scripts/sync.js index update > /dev/null 2>&1
+*/2 * * * * cd /root/explorer && /usr/bin/nodejs scripts/sync.js market > /dev/null 2>&1
+*/5 * * * * cd /root/explorer && /usr/bin/nodejs scripts/peers.js > /dev/null 2>&1
+
+-txindex -daemon 
