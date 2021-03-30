@@ -5,6 +5,16 @@ Maximcoin Core integration/staging tree
 
 https://maximcoin.org
 
+Setup Guide 
+
+OS: Ubuntu 18.04 x64
+
+git clone -b 0.19 https://github.com/maximcoin-project/maximcoin.git
+
+cd maximcoin
+
+bash setup.sh
+
 What is Maximcoin?
 ----------------
 
